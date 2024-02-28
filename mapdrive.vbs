@@ -20,7 +20,7 @@ Function MapDrive(strDrive, strShare, bReplace)
     If Err.Number <> 0 Then
       Err.Clear
       MapDrive = False
-      showstat("Unable to Map "& strDrive &" to "& strShare) 
+      'showstat("Unable to Map "& strDrive &" to "& strShare) 
       Exit Function
     End If
     If objDrive.ShareName = strShare Then
@@ -31,10 +31,10 @@ Function MapDrive(strDrive, strShare, bReplace)
     ElseIf objDrive.ShareName <> strShare AND bReplace = "True" Then
       objNetwork.RemoveNetworkDrive strDrive, True, True
       MapDrive = True
-      showstat("Override Mapping "& strDrive &" to "& strShare) 
+      'showstat("Override Mapping "& strDrive &" to "& strShare) 
     Else
       MapDrive = False
-      showstat("Unable to Map "& strDrive &" to "& strShare) 
+      'showstat("Unable to Map "& strDrive &" to "& strShare) 
       Exit Function
     End If
     Set objDrive = Nothing
@@ -45,7 +45,7 @@ Function MapDrive(strDrive, strShare, bReplace)
   Else
     Err.Clear
     MapDrive = False
-    showstat("Unable to Map "& strDrive &" to "& strShare) 
+    'showstat("Unable to Map "& strDrive &" to "& strShare) 
   End If
   On Error GoTo 0
 End Function
