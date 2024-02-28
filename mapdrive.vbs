@@ -1,3 +1,5 @@
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+Set objNetwork = CreateObject("Wscript.Network")
 
 Call MapDrive("h:", "\\computer\share", "False")
 
